@@ -1,0 +1,428 @@
+
+
+/*共通*/
+body{
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 600px;
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+  margin: 0 auto;
+}
+p,textarea{
+  font-size: 12px;
+}
+h1{
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+
+input, label.button{
+  font-size: 15px;
+  line-height: 2;
+  margin: 2px 0;
+}
+::placeholder{
+  color: #ccc;
+}
+
+
+
+input[type="button"], .button{
+	padding: 10px 16px;
+	text-decoration: none;
+  border: solid 1px #fff;
+  text-align: center;
+  background: #eee;
+  color: #000;
+}
+li.button{
+  border-style: solid none;
+}
+.button > a{
+  text-align: center;
+  color: #000;
+
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+input[type="button"]:hover ,.button:hover{
+	color: #ffffff;
+	background-color: #da3c41;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+/*
+label.button{
+  font-size: 15px;
+  line-height: 2;
+  margin: 2px 0;
+}
+
+.button{
+	padding: 10px 16px;
+  border: solid 1px #fff;
+  text-align: center;
+  background: #eee;
+  color: #000;
+
+}
+.button:hover {
+	color: #ffffff;
+	background-color: #da3c41;
+}
+*/
+
+input[type="radio"] + label{
+  flex-grow: 1;
+}
+
+
+input[type="radio"]:checked + label.button{
+  color: #ffffff;
+	background-color: #da3c41;
+}
+
+.show-area{
+  overflow: auto;
+
+  width: 100%;
+
+  background: #fff7f0;
+  /*
+  logの方は親にdivがあるため、そっちを編集したほうがいい
+      padding: 0 7px;
+  border-radius: 6px;
+  */
+}
+
+.result{
+  height: 30vh;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+
+.list{
+  display: flex;
+  flex-direction: column;
+	flex-wrap: wrap;
+  width: 100%;
+
+}
+.group{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.group > input{
+  flex-grow:1;
+}
+
+
+.col_2 > input{
+  flex-grow: 1;
+  flex-basis: 100px;
+
+}
+.col_2 > div{
+  width: 50%;
+}
+.col_2 > label{
+
+}
+
+.col_3 > div{
+  flex-grow: 1;
+  flex-basis: 100px;
+}
+.col_3 > input{
+  flex-grow: 1;
+  flex-basis: 100px;
+}
+.block > input{
+  width: 100%;
+}
+
+
+
+.item{
+  width:100%;
+  height: 100px;
+  border: solid;
+}
+.item label{
+}
+
+
+/*index
+.form_row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.dise_ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dise_ul li{
+  flex-basis: 100%;
+  padding: 3px 10px;
+
+}
+.dise_ul input[type="text"] {
+  width:100%;
+}
+
+form > textarea{
+  width: 100%;
+}
+
+*/
+
+
+
+.log textarea{
+  width: 100%;
+  height: 90%;
+}
+
+
+
+
+
+/*log*/
+
+#log-edit{
+  display: none;
+}
+
+#log-label{
+  width: 80%;
+}
+#log-edit:checked + label{
+  width:40%;
+}
+
+#log-delete{
+  width: 20%;
+}
+
+#log-cancel{
+  display: none;
+  width:40%;
+}
+
+#log-edit:checked + label + #log-cancel{
+  display: inline-flex;
+}
+
+#edit-area{
+  width:100%;
+  height: 70vh;
+  vertical-align: middle;
+  display: none;
+}
+
+#show-area{
+  height: 60vh;
+  display: inline-block;
+}
+
+
+
+
+
+/*スライド式メニューデザイン
+https://try-m.co.jp/blog/web-create/1203/
+
+#menu ul {
+  margin: 0;
+  padding-right: 0;
+}
+
+#menu li {
+  list-style: none;
+}
+*/
+
+
+
+/*メニューに関して*/
+.erotion-data{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.erotion-p{
+  padding: 10px;
+  font-size: 30px;
+  font:bold;
+}
+.erotion-bonus{
+  margin: 0;
+  padding: 10px;
+
+}
+.erotion-bonus li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  overflow: hidden;
+  width: 70vw;
+  height: 100%;
+
+  transition: left .4s, right .4s;
+  background-color: #eee;
+
+}
+
+nav{
+  width: 100%;
+}
+
+nav ul{
+  display: flex;
+  flex-direction: column;
+
+	list-style-type: none;
+
+  width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #eeeeee;
+
+}
+/*
+
+nav ul li{
+  text-align: center;
+}
+
+nav a{
+  display: block;
+	padding: 8px 16px;
+	text-decoration: none;
+	color: #000;
+}
+
+nav li a.active {
+	color: #ffffff;
+	background-color: #da3c41;
+}
+nav li a:hover:not(.active) {
+	color: #ffffff;
+	background-color: #1b2538;
+}
+*/
+
+
+#nav-input:checked + #nav-open + #menu {
+  left: 0;
+}
+
+
+
+
+/*
+.headerContainer {
+  position: relative;
+}
+
+*/
+
+
+#nav-drawer {
+  /*メニューボタンの位置*/
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-width: 0;
+}
+.nav-unshoen:focus{outline:0;}
+
+
+/*アイコンのスペース*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  vertical-align: middle;
+
+}
+
+#nav-open span:before, #nav-open span:after {
+  box-sizing: content-box;
+  height: 4px;/*線の太さ*/
+  width: 30px;/*長さ*/
+  position: absolute;
+  content: '';
+  display: block;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  -webkit-transition: 0.5s transform 0s, 0.2s height 0.5s, 0.25s top 0.5s;
+  -moz-transition: 0.5s transform 0s, 0.2s height 0.5s, 0.25s top 0.5s;
+  transition: 0.5s transform 0s, 0.2s height 0.5s, 0.25s top 0.5s;
+
+}
+#nav-open span:before {
+  border-top-width: 4px;
+  border-bottom-width: 2px;
+
+}
+#nav-open span:after {
+  top: 20px;
+  border-top-width: 2px;
+  border-bottom-width: 4px;
+}
+
+#nav-input:checked ~ #nav-open span:before, #nav-input:checked ~ #nav-open span:after {
+    top: 10px;
+    height: 0;
+
+}
+
+#nav-input:checked ~ #nav-open span:before {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg)
+}
+
+#nav-input:checked ~ #nav-open span:after {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+#nav-input:checked ~ #nav-open span:before, #nav-input:checked ~ #nav-open span:after {
+    -webkit-transition: 0.5s transform 0.5s, 0.2s height 0s, 0.25s top 0s;
+    -moz-transition: 0.5s transform 0.5s, 0.2s height 0s, 0.25s top 0s;
+    transition: 0.5s transform 0.5s, 0.2s height 0s, 0.25s top 0s;
+}

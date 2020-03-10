@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>だぶくろツール</title>
+
+    <audio id="sound" preload="auto">
+      <!--source src="sound.mp3" type="audio/mp3"-->
+      <source src="se_dise.wav" type="audio/wav">
+    </audio>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  </head>
+
+
+  <body>
+    <header>
+    	<div id="nav-drawer">
+    		<input id="nav-input" type="checkbox" class="nav-unshown">
+    		<label id="nav-open" for="nav-input"><span></span></label>
+        <div id="menu">
+          <h1>MENU</h1>
+          <div id="menu-erotion-data" class="erotion-data">
+            <div id="menu-erotion-p" class="erotion-p">- %</div>
+            <ul id="menu-erotion-bonus" class="erotion-bonus">
+              <li>ダイス：</li>
+              <li>エフェクト：</li>
+            </ul>
+          </div>
+          <nav>
+            <ul>
+              <li class="button"><a href="index.html">ダイス</a></li>
+              <li class="button"><a href="erotion.html">侵蝕値</a></li>
+              <li class="button"><a href="log.html">LOG</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="main">
+      <h1>侵蝕値</h1>
+      <div id="erotion-data" class="erotion-data">
+        <div id="erotion-p" class="erotion-p">- %</div>
+        <ul id="erotion-bonus" class="erotion-bonus">
+          <li>ダイス：</li>
+          <li>エフェクト：</li>
+        </ul>
+      </div>
+      <div class="list">
+        <input id="erotion-value" type="number">
+        <input id="erotion-text" type="text" placeholder="備考">
+        <div class="group col_2">
+          <input type="button" value="+1D10" onclick="d10Button()">
+          <input type="button" value="クリア" onclick="eClearButton()">
+        </div>
+        <div class="group col_3">
+          <input type="button" value="加算" onclick="addButton()">
+          <input type="button" value="減算" onclick="subButton()">
+          <input type="button" value="セット" onclick="setButton()">
+        </div>
+
+        <div class="result show-area" style="white-space: pre-line;"><p id="erotion_res"></p></div>
+        <input type="button" id="button_c" value="コピー" onclick="copy_roll()">
+
+
+      </div>
+    </div>
+
+
+  </body>
+</html>
