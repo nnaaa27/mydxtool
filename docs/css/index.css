@@ -4,9 +4,10 @@
 body{
   font-size: 15px;
   line-height: 1.8;
-  max-width: 600px;
+  max-width: 700px;
   font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
-  margin: 10 auto;
+  margin: 0 auto;
+  padding: 10px;
 }
 p,textarea{
   font-size: 12px;
@@ -14,6 +15,26 @@ p,textarea{
 h1{
   padding: 0 10px;
   font-size: 20px;
+}
+
+
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+input[type="submit"]::-webkit-search-decoration,
+input[type="button"]::-webkit-search-decoration {
+  display: none;
+}
+input[type="submit"]::focus,
+input[type="button"]::focus {
+  outline-offset: -2px;
 }
 
 
@@ -57,27 +78,6 @@ input[type="radio"] {
   display: none;
 }
 
-/*
-label.button{
-  font-size: 15px;
-  line-height: 2;
-  margin: 2px 0;
-}
-
-.button{
-	padding: 10px 16px;
-  border: solid 1px #fff;
-  text-align: center;
-  background: #eee;
-  color: #000;
-
-}
-.button:hover {
-	color: #ffffff;
-	background-color: #da3c41;
-}
-*/
-
 input[type="radio"] + label{
   flex-grow: 1;
 }
@@ -90,15 +90,9 @@ input[type="radio"]:checked + label.button{
 
 .show-area{
   overflow: auto;
-
   width: 100%;
-
   background: #fff7f0;
-  /*
-  logの方は親にdivがあるため、そっちを編集したほうがいい
-      padding: 0 7px;
-  border-radius: 6px;
-  */
+
 }
 
 .result{
@@ -161,46 +155,13 @@ input[type="radio"]:checked + label.button{
 .item label{
 }
 
-
-/*index
-.form_row{
-  display: flex;
-  justify-content: space-between;
-}
-
-.dise_ul{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.dise_ul li{
-  flex-basis: 100%;
-  padding: 3px 10px;
-
-}
-.dise_ul input[type="text"] {
-  width:100%;
-}
-
-form > textarea{
-  width: 100%;
-}
-
-*/
-
-
-
 .log textarea{
   width: 100%;
   height: 90%;
 }
 
 
-
-
-
 /*log*/
-
 #log-edit{
   display: none;
 }
@@ -242,16 +203,6 @@ form > textarea{
 
 
 /*スライド式メニューデザイン
-https://try-m.co.jp/blog/web-create/1203/
-
-#menu ul {
-  margin: 0;
-  padding-right: 0;
-}
-
-#menu li {
-  list-style: none;
-}
 */
 
 
@@ -308,43 +259,10 @@ nav ul{
 	background-color: #eeeeee;
 
 }
-/*
-
-nav ul li{
-  text-align: center;
-}
-
-nav a{
-  display: block;
-	padding: 8px 16px;
-	text-decoration: none;
-	color: #000;
-}
-
-nav li a.active {
-	color: #ffffff;
-	background-color: #da3c41;
-}
-nav li a:hover:not(.active) {
-	color: #ffffff;
-	background-color: #1b2538;
-}
-*/
-
 
 #nav-input:checked + #nav-open + #menu {
   left: 0;
 }
-
-
-
-
-/*
-.headerContainer {
-  position: relative;
-}
-
-*/
 
 
 #nav-drawer {
