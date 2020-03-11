@@ -84,7 +84,7 @@ function rollJudge(d, c, t, str){
     //クリティカルの数
     n = (list[l].filter(function(v){return v >= c})).length;
     if (n == 0){
-      data['min'] = Math.min(...list[l]);
+      data['max'] = Math.max(...list[l]);
       list[l] = '[' + list[l] + ']（C:' + n + '個）'
       break;
     }
@@ -92,7 +92,7 @@ function rollJudge(d, c, t, str){
     data['cn']++;
   }
   data['list'] = list;
-  data['res'] = data['cn'] * 10 + data['min'] + t
+  data['res'] = data['cn'] * 10 + data['max'] + t
   return data
 }
 
@@ -101,7 +101,7 @@ function showJudge(data){
   str += data['1l'] + "\n";
   str += data['ex'] + "(C:" + data['cn'] + "回) = " + data['res'] + "\n";
   data['list'].forEach(s => str += tab + s + "\n");
-  str += tab + (data['cn'] * 10 + data['min']) + " + " + data['data'][2] + " = " + data['res'] + "\n";
+  str += tab + (data['cn'] * 10 + data['max']) + " + " + data['data'][2] + " = " + data['res'] + "\n";
 
   //document.getElementById("judge_result").value = str;
   document.getElementById("judge_res").innerHTML = str ;
