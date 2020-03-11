@@ -85,7 +85,6 @@ function rollJudge(d, c, t, str){
     n = (list[l].filter(function(v){return v >= c})).length;
     if (n == 0){
       data['max'] = Math.max(...list[l]);
-      alert(data['max'])
       list[l] = '[' + list[l] + ']（C:' + n + '個）'
       break;
     }
